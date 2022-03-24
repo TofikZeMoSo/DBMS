@@ -1,0 +1,139 @@
+1. Find out the number of documentaries with deleted scenes.
+
+mysql>
+mysql> select *
+    -> from category c, film_category fc
+    -> where c.name = 'Documentary' and c.category_id = fc.category_id;
++-------------+-------------+---------------------+---------+-------------+---------------------+
+| category_id | name        | last_update         | film_id | category_id | last_update         |
++-------------+-------------+---------------------+---------+-------------+---------------------+
+|           6 | Documentary | 2006-02-15 04:46:27 |       1 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |       3 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |      40 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |      58 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |      62 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |      72 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |      85 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     101 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     129 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     142 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     150 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     156 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     164 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     199 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     206 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     219 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     221 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     248 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     261 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     274 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     295 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     336 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     393 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     400 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     407 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     412 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     427 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     441 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     457 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     466 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     497 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     544 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     552 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     571 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     575 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     576 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     587 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     589 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     616 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     622 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     627 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     629 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     650 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     670 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     687 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     698 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     708 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     712 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     713 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     734 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     757 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     776 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     788 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     791 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     812 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     834 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     855 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     888 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     925 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     926 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     943 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     945 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     952 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     960 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     966 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     973 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     992 |           6 | 2006-02-15 05:07:09 |
+|           6 | Documentary | 2006-02-15 04:46:27 |     996 |           6 | 2006-02-15 05:07:09 |
++-------------+-------------+---------------------+---------+-------------+---------------------+
+68 rows in set (0.03 sec)
+
+mysql>
+mysql>
+mysql> select * from film where special_features like '%Deleted Scenes%' and film.film_id in
+    -> (select fc.film_id
+    -> from category c, film_category fc
+    -> where c.name = 'Documentary' and c.category_id = fc.category_id);
++---------+------------------------+------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+--------------------------------------------------------+---------------------+
+| film_id | title                  | description                                                                                                | release_year | language_id | original_language_id | rental_duration | rental_rate | length | replacement_cost | rating | special_features                                       | last_update         |
++---------+------------------------+------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+--------------------------------------------------------+---------------------+
+|       1 | ACADEMY DINOSAUR       | A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies           |         2006 |           1 |                 NULL |               6 |        0.99 |     86 |            20.99 | PG     | Deleted Scenes,Behind the Scenes                       | 2006-02-15 05:03:42 |
+|       3 | ADAPTATION HOLES       | A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory           |         2006 |           1 |                 NULL |               7 |        2.99 |     50 |            18.99 | NC-17  | Trailers,Deleted Scenes                                | 2006-02-15 05:03:42 |
+|      58 | BEACH HEARTBREAKERS    | A Fateful Display of a Womanizer And a Mad Scientist who must Outgun a A Shark in Soviet Georgia           |         2006 |           1 |                 NULL |               6 |        2.99 |    122 |            16.99 | G      | Deleted Scenes,Behind the Scenes                       | 2006-02-15 05:03:42 |
+|      62 | BED HIGHBALL           | A Astounding Panorama of a Lumberjack And a Dog who must Redeem a Woman in An Abandoned Fun House          |         2006 |           1 |                 NULL |               5 |        2.99 |    106 |            23.99 | NC-17  | Trailers,Commentaries,Deleted Scenes                   | 2006-02-15 05:03:42 |
+|      85 | BONNIE HOLOCAUST       | A Fast-Paced Story of a Crocodile And a Robot who must Find a Moose in Ancient Japan                       |         2006 |           1 |                 NULL |               4 |        0.99 |     63 |            29.99 | G      | Deleted Scenes                                         | 2006-02-15 05:03:42 |
+|     129 | CAUSE DATE             | A Taut Tale of a Explorer And a Pastry Chef who must Conquer a Hunter in A MySQL Convention                |         2006 |           1 |                 NULL |               3 |        2.99 |    179 |            16.99 | R      | Commentaries,Deleted Scenes,Behind the Scenes          | 2006-02-15 05:03:42 |
+|     142 | CHICKEN HELLFIGHTERS   | A Emotional Drama of a Dog And a Explorer who must Outrace a Technical Writer in Australia                 |         2006 |           1 |                 NULL |               3 |        0.99 |    122 |            24.99 | PG     | Trailers,Commentaries,Deleted Scenes,Behind the Scenes | 2006-02-15 05:03:42 |
+|     164 | COAST RAINBOW          | A Astounding Documentary of a Mad Cow And a Pioneer who must Challenge a Butler in The Sahara Desert       |         2006 |           1 |                 NULL |               4 |        0.99 |     55 |            20.99 | PG     | Trailers,Commentaries,Deleted Scenes,Behind the Scenes | 2006-02-15 05:03:42 |
+|     221 | DELIVERANCE MULHOLLAND | A Astounding Saga of a Monkey And a Moose who must Conquer a Butler in A Shark Tank                        |         2006 |           1 |                 NULL |               4 |        0.99 |    100 |             9.99 | R      | Deleted Scenes                                         | 2006-02-15 05:03:42 |
+|     248 | DOZEN LION             | A Taut Drama of a Cat And a Girl who must Defeat a Frisbee in The Canadian Rockies                         |         2006 |           1 |                 NULL |               6 |        4.99 |    177 |            20.99 | NC-17  | Commentaries,Deleted Scenes,Behind the Scenes          | 2006-02-15 05:03:42 |
+|     393 | HALLOWEEN NUTS         | A Amazing Panorama of a Forensic Psychologist And a Technical Writer who must Fight a Dentist in A U-Boat  |         2006 |           1 |                 NULL |               6 |        2.99 |     47 |            19.99 | PG-13  | Deleted Scenes                                         | 2006-02-15 05:03:42 |
+|     412 | HEAVYWEIGHTS BEAST     | A Unbelieveable Story of a Composer And a Dog who must Overcome a Womanizer in An Abandoned Amusement Park |         2006 |           1 |                 NULL |               6 |        4.99 |    102 |            25.99 | G      | Deleted Scenes                                         | 2006-02-15 05:03:42 |
+|     441 | HUNTER ALTER           | A Emotional Drama of a Mad Cow And a Boat who must Redeem a Secret Agent in A Shark Tank                   |         2006 |           1 |                 NULL |               5 |        2.99 |    125 |            21.99 | PG-13  | Commentaries,Deleted Scenes,Behind the Scenes          | 2006-02-15 05:03:42 |
+|     544 | MADISON TRAP           | A Awe-Inspiring Reflection of a Monkey And a Dentist who must Overcome a Pioneer in A U-Boat               |         2006 |           1 |                 NULL |               4 |        2.99 |    147 |            11.99 | R      | Commentaries,Deleted Scenes,Behind the Scenes          | 2006-02-15 05:03:42 |
+|     571 | METAL ARMAGEDDON       | A Thrilling Display of a Lumberjack And a Crocodile who must Meet a Monkey in A Baloon Factory             |         2006 |           1 |                 NULL |               6 |        2.99 |    161 |            26.99 | PG-13  | Trailers,Commentaries,Deleted Scenes                   | 2006-02-15 05:03:42 |
+|     575 | MIDSUMMER GROUNDHOG    | A Fateful Panorama of a Moose And a Dog who must Chase a Crocodile in Ancient Japan                        |         2006 |           1 |                 NULL |               3 |        4.99 |     48 |            27.99 | G      | Trailers,Deleted Scenes                                | 2006-02-15 05:03:42 |
+|     589 | MODERN DORADO          | A Awe-Inspiring Story of a Butler And a Sumo Wrestler who must Redeem a Boy in New Orleans                 |         2006 |           1 |                 NULL |               3 |        0.99 |     74 |            20.99 | PG     | Trailers,Commentaries,Deleted Scenes                   | 2006-02-15 05:03:42 |
+|     622 | NEWSIES STORY          | A Action-Packed Character Study of a Dog And a Lumberjack who must Outrace a Moose in The Gulf of Mexico   |         2006 |           1 |                 NULL |               4 |        0.99 |    159 |            25.99 | G      | Trailers,Deleted Scenes                                | 2006-02-15 05:03:42 |
+|     627 | NORTH TEQUILA          | A Beautiful Character Study of a Mad Cow And a Robot who must Reach a Womanizer in New Orleans             |         2006 |           1 |                 NULL |               4 |        4.99 |     67 |             9.99 | NC-17  | Commentaries,Deleted Scenes,Behind the Scenes          | 2006-02-15 05:03:42 |
+|     629 | NOTORIOUS REUNION      | A Amazing Epistle of a Woman And a Squirrel who must Fight a Hunter in A Baloon                            |         2006 |           1 |                 NULL |               7 |        0.99 |    128 |             9.99 | NC-17  | Trailers,Commentaries,Deleted Scenes                   | 2006-02-15 05:03:42 |
+|     650 | PACIFIC AMISTAD        | A Thrilling Yarn of a Dog And a Moose who must Kill a Pastry Chef in A Manhattan Penthouse                 |         2006 |           1 |                 NULL |               3 |        0.99 |    144 |            27.99 | G      | Trailers,Commentaries,Deleted Scenes,Behind the Scenes | 2006-02-15 05:03:42 |
+|     670 | PELICAN COMFORTS       | A Epic Documentary of a Boy And a Monkey who must Pursue a Astronaut in Berlin                             |         2006 |           1 |                 NULL |               4 |        4.99 |     48 |            17.99 | PG     | Commentaries,Deleted Scenes                            | 2006-02-15 05:03:42 |
+|     687 | POCUS PULP             | A Intrepid Yarn of a Frisbee And a Dog who must Build a Astronaut in A Baloon Factory                      |         2006 |           1 |                 NULL |               6 |        0.99 |    138 |            15.99 | NC-17  | Commentaries,Deleted Scenes,Behind the Scenes          | 2006-02-15 05:03:42 |
+|     698 | PRINCESS GIANT         | A Thrilling Yarn of a Pastry Chef And a Monkey who must Battle a Monkey in A Shark Tank                    |         2006 |           1 |                 NULL |               3 |        2.99 |     71 |            29.99 | NC-17  | Trailers,Deleted Scenes                                | 2006-02-15 05:03:42 |
+|     712 | RAIDERS ANTITRUST      | A Amazing Drama of a Teacher And a Feminist who must Meet a Woman in The First Manned Space Station        |         2006 |           1 |                 NULL |               4 |        0.99 |     82 |            11.99 | PG-13  | Deleted Scenes                                         | 2006-02-15 05:03:42 |
+|     713 | RAINBOW SHOCK          | A Action-Packed Story of a Hunter And a Boy who must Discover a Lumberjack in Ancient India                |         2006 |           1 |                 NULL |               3 |        4.99 |     74 |            14.99 | PG     | Trailers,Commentaries,Deleted Scenes,Behind the Scenes | 2006-02-15 05:03:42 |
+|     776 | SECRET GROUNDHOG       | A Astounding Story of a Cat And a Database Administrator who must Build a Technical Writer in New Orleans  |         2006 |           1 |                 NULL |               6 |        4.99 |     90 |            11.99 | PG     | Commentaries,Deleted Scenes                            | 2006-02-15 05:03:42 |
+|     791 | SHOW LORD              | A Fanciful Saga of a Student And a Girl who must Find a Butler in Ancient Japan                            |         2006 |           1 |                 NULL |               3 |        4.99 |    167 |            24.99 | PG-13  | Deleted Scenes                                         | 2006-02-15 05:03:42 |
+|     834 | SPOILERS HELLFIGHTERS  | A Fanciful Story of a Technical Writer And a Squirrel who must Defeat a Dog in The Gulf of Mexico          |         2006 |           1 |                 NULL |               4 |        0.99 |    151 |            26.99 | G      | Trailers,Commentaries,Deleted Scenes,Behind the Scenes | 2006-02-15 05:03:42 |
+|     925 | UNITED PILOT           | A Fast-Paced Reflection of a Cat And a Mad Cow who must Fight a Car in The Sahara Desert                   |         2006 |           1 |                 NULL |               3 |        0.99 |    164 |            27.99 | R      | Trailers,Deleted Scenes                                | 2006-02-15 05:03:42 |
+|     926 | UNTOUCHABLES SUNRISE   | A Amazing Documentary of a Woman And a Astronaut who must Outrace a Teacher in An Abandoned Fun House      |         2006 |           1 |                 NULL |               5 |        2.99 |    120 |            11.99 | NC-17  | Trailers,Deleted Scenes                                | 2006-02-15 05:03:42 |
+|     945 | VIRGINIAN PLUTO        | A Emotional Panorama of a Dentist And a Crocodile who must Meet a Boy in Berlin                            |         2006 |           1 |                 NULL |               5 |        0.99 |    164 |            22.99 | R      | Deleted Scenes                                         | 2006-02-15 05:03:42 |
+|     952 | WAGON JAWS             | A Intrepid Drama of a Moose And a Boat who must Kill a Explorer in A Manhattan Penthouse                   |         2006 |           1 |                 NULL |               7 |        2.99 |    152 |            17.99 | PG     | Deleted Scenes,Behind the Scenes                       | 2006-02-15 05:03:42 |
+|     973 | WIFE TURN              | A Awe-Inspiring Epistle of a Teacher And a Feminist who must Confront a Pioneer in Ancient Japan           |         2006 |           1 |                 NULL |               3 |        4.99 |    183 |            27.99 | NC-17  | Deleted Scenes,Behind the Scenes                       | 2006-02-15 05:03:42 |
++---------+------------------------+------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+--------------------------------------------------------+---------------------+
+34 rows in set (0.01 sec)
+
+mysql>
+mysql> select count(distinct title) from film where special_features like '%Deleted Scenes%' and film.film_id in
+    -> (select fc.film_id
+    -> from category c, film_category fc
+    -> where c.name = 'Documentary' and c.category_id = fc.category_id);
++-----------------------+
+| count(distinct title) |
++-----------------------+
+|                    34 |
++-----------------------+
+1 row in set (0.03 sec)
+
+mysql>
